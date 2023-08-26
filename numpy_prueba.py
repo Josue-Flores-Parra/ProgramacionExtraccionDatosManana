@@ -28,3 +28,5 @@ ecuaciones = [[1, 2], [3, 5]]
 np_ecuaciones = np.array(ecuaciones)
 resultados = np.array([1, 2])
 print(np.linalg.solve(np_ecuaciones, resultados))
+
+print("Fin")
