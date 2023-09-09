@@ -57,7 +57,7 @@ for gender in genderOptions[1:]:
 navegador.close()
 
 data_df = pd.DataFrame(datos)
-data_df.to_csv("data_olimpiadas.csv")
+data_df.to_csv("datasets/data_olimpiadas.csv")
 
 
         
