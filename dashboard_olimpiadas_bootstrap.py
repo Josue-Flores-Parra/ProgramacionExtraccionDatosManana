@@ -9,7 +9,6 @@ from dash import Dash, dcc, html, dash_table, callback, Input, Output
 
 data = pd.read_csv(cd.PATH_ARCHIVO, index_col=0)
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
-server = app.server
 
 def tarjeta_filtros():
     control = dbc.Card([
@@ -59,5 +58,6 @@ def dashboard():
 
 
 if __name__ == "__main__":
+    server = app.server
     app.layout = dashboard()
-    server.run_server()
+    app.run_server()
