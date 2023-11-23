@@ -60,4 +60,4 @@ def dashboard():
 
 if __name__ == "__main__":
     app.layout = dashboard()
-    app.run(debug=True)
+    server.run()
