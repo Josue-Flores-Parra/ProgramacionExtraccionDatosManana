@@ -8,7 +8,8 @@ from dash import Dash, dcc, html, dash_table, callback, Input, Output
 # html -----> Dash Html Components
 
 data = pd.read_csv(cd.PATH_ARCHIVO, index_col=0)
-
+app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
 
 def tarjeta_filtros():
     control = dbc.Card([
@@ -56,8 +57,8 @@ def dashboard():
     ])
     return body
 
-
+app.layout = dashboard()
 if __name__ == "__main__":
-    app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
-    app.layout = dashboard()
-    app.run(debug=True)
+    #server = app.server
+    #app.layout = dashboard()
+    app.run_server()
